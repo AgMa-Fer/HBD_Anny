@@ -1,0 +1,50 @@
+/* Estilos para el contenedor del rollo fotográfico */
+.photo-roll {
+    position: relative;
+    width: 80%; /* Ajusta el ancho del contenedor según sea necesario */
+    max-width: 800px; /* Máximo ancho para el contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    overflow: hidden;
+    height: 200px; /* Ajusta la altura del contenedor */
+    border: 2px solid #D5A6F3; /* Borde estilizado */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #000; /* Fondo negro para contraste */
+    margin-bottom: 40px; /* Espacio debajo del rollo fotográfico */
+    perspective: 1000px; /* Agrega perspectiva para el efecto de profundidad */
+}
+
+/* Estilos para el rollo fotográfico en sí */
+.rollo-fotografico {
+    display: flex;
+    width: calc(100% * 10); /* Ancho total para contener todas las imágenes */
+    height: 100%; /* Asegura que el rollo fotográfico ocupe toda la altura del contenedor */
+    animation: girar 30s linear infinite; /* Ajusta la duración de la animación para hacerlo más lento */
+    transform-style: preserve-3d; /* Habilita el efecto 3D */
+}
+
+/* Estilos para las imágenes */
+.rollo-fotografico img {
+    width: 20%; /* Ajusta el ancho de las imágenes para que se vean más distantes */
+    height: auto;
+    object-fit: cover; /* Asegura que la imagen cubra el área del contenedor sin distorsionarse */
+    object-position: center; /* Asegura que la imagen se centre dentro del contenedor */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    margin: 0 20px; /* Espaciado entre imágenes para dar el efecto de distancia */
+}
+
+/* Animación para el desplazamiento continuo */
+@keyframes girar {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Estilo adaptativo para pantallas más grandes */
+@media (min-width: 768px) {
+    .photo-roll {
+        height: 300px; /* Ajusta la altura para pantallas más grandes */
+    }
+
+    .rollo-fotografico img {
+        width: 20%; /* Ajusta el ancho de las imágenes para que se vean más distantes en pantallas grandes */
+    }
+}
